@@ -1,0 +1,109 @@
+{
+  "name": "Hunnids - Lead Follow-up Scheduler",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {"interval": [{"field": "cronExpression", "cronExpression": "0 10 * * *"}]}
+      },
+      "id": "c1000000-0000-0000-0000-000000000001",
+      "name": "Every Day 10am",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [0, 300]
+    },
+    {
+      "parameters": {
+        "operation": "read",
+        "documentId": {"__rl": true, "mode": "id", "value": "REPLACE_WITH_YOUR_SHEET_ID"},
+        "sheetName": {"__rl": true, "mode": "name", "value": "Leads"},
+        "options": {}
+      },
+      "id": "c1000000-0000-0000-0000-000000000002",
+      "name": "Get All Leads",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [220, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {"id": "REPLACE_ME", "name": "Google Sheets - Hunnids"}
+      }
+    },
+    {
+      "parameters": {
+        "jsCode": "const items = $input.all();\nconst now = Date.now();\nconst result = [];\n\nfor (const item of items) {\n  const row = item.json;\n  const estado = (row.estado || '').toLowerCase();\n  const followUpCount = Number(row.follow_up_count || 0);\n  const lastContact = row.ultimo_contacto ? new Date(row.ultimo_contacto).getTime() : 0;\n  const hoursSince = (now - lastContact) / (1000 * 60 * 60);\n\n  const isFollowable = (estado === 'nuevo' || estado === 'contactado' || estado === 'seguimiento_enviado');\n  const isStale = hoursSince >= 24;\n  const underCap = followUpCount < 3;\n\n  if (isFollowable && isStale && underCap && row.telefono) {\n    result.push({ json: row });\n  }\n}\n\nreturn result;"
+      },
+      "id": "c1000000-0000-0000-0000-000000000003",
+      "name": "Filter Needs Followup",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [440, 300]
+    },
+    {
+      "parameters": {
+        "jsCode": "const row = $input.item.json;\n\nconst followUpText = 'Hola' + (row.nombre ? ' ' + row.nombre : '') + ', solo queria dar seguimiento a tu consulta sobre ' + (row.interes || 'nuestros relojes') + '. Sigues interesado? Con gusto te ayudo.';\n\nlet url, body;\nif ((row.canal || '').toLowerCase() === 'instagram') {\n  url = 'https://graph.facebook.com/v21.0/' + row.igAccountId + '/messages';\n  body = { recipient: { id: row.telefono }, message: { text: followUpText } };\n} else {\n  url = 'https://graph.facebook.com/v21.0/' + row.phoneNumberId + '/messages';\n  body = { messaging_product: 'whatsapp', to: row.telefono, text: { body: followUpText } };\n}\n\nreturn [{\n  json: {\n    ...row,\n    followUpUrl: url,\n    followUpBody: body,\n    followUpText,\n    new_follow_up_count: Number(row.follow_up_count || 0) + 1,\n    new_ultimo_contacto: new Date().toISOString()\n  }\n}];"
+      },
+      "id": "c1000000-0000-0000-0000-000000000004",
+      "name": "Build Followup Request",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [660, 300]
+    },
+    {
+      "parameters": {
+        "method": "POST",
+        "url": "={{ $json.followUpUrl }}",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpBearerAuth",
+        "sendHeaders": true,
+        "headerParameters": {"parameters": [{"name": "Content-Type", "value": "application/json"}]},
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ $json.followUpBody }}",
+        "options": {}
+      },
+      "id": "c1000000-0000-0000-0000-000000000005",
+      "name": "Send Followup",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4.2,
+      "position": [880, 300],
+      "credentials": {
+        "httpBearerAuth": {"id": "REPLACE_ME", "name": "Meta Graph API Token"}
+      }
+    },
+    {
+      "parameters": {
+        "operation": "update",
+        "documentId": {"__rl": true, "mode": "id", "value": "REPLACE_WITH_YOUR_SHEET_ID"},
+        "sheetName": {"__rl": true, "mode": "name", "value": "Leads"},
+        "columns": {
+          "mappingMode": "defineBelow",
+          "matchingColumns": ["message_id"],
+          "value": {
+            "message_id": "={{ $('Build Followup Request').item.json.message_id }}",
+            "estado": "seguimiento_enviado",
+            "ultimo_contacto": "={{ $('Build Followup Request').item.json.new_ultimo_contacto }}",
+            "follow_up_count": "={{ $('Build Followup Request').item.json.new_follow_up_count }}"
+          },
+          "schema": []
+        },
+        "options": {}
+      },
+      "id": "c1000000-0000-0000-0000-000000000006",
+      "name": "Update Lead Status",
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.5,
+      "position": [1100, 300],
+      "credentials": {
+        "googleSheetsOAuth2Api": {"id": "REPLACE_ME", "name": "Google Sheets - Hunnids"}
+      }
+    }
+  ],
+  "connections": {
+    "Every Day 10am": {"main": [[{"node": "Get All Leads", "type": "main", "index": 0}]]},
+    "Get All Leads": {"main": [[{"node": "Filter Needs Followup", "type": "main", "index": 0}]]},
+    "Filter Needs Followup": {"main": [[{"node": "Build Followup Request", "type": "main", "index": 0}]]},
+    "Build Followup Request": {"main": [[{"node": "Send Followup", "type": "main", "index": 0}]]},
+    "Send Followup": {"main": [[{"node": "Update Lead Status", "type": "main", "index": 0}]]}
+  },
+  "settings": {"executionOrder": "v1"},
+  "pinData": {}
+}

@@ -1,0 +1,2417 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HUNNIDS – Relojes originales seleccionados en Argentina. Citizen, Seiko, Bulova, Casio, Orient y más. Envíos a todo el país." />
+  <meta name="keywords" content="relojes originales argentina, relojes citizen argentina, seiko argentina, bulova argentina, casio argentina, relojes de lujo, comprar relojes online" />
+  <meta name="robots" content="index, follow" />
+  <meta property="og:title" content="HUNNIDS – Relojes Originales" />
+  <meta property="og:description" content="Relojes originales seleccionados cuidadosamente para quienes entienden que un reloj es mucho más que dar la hora." />
+  <meta property="og:type" content="website" />
+  <title>HUNNIDS – Relojes Originales</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --black: #0a0a0a;
+      --dark: #111111;
+      --dark2: #1a1a1a;
+      --dark3: #222222;
+      --gray: #888888;
+      --gray2: #555555;
+      --light: #cccccc;
+      --white: #f5f5f5;
+      --accent: #c9a96e;
+      --accent2: #e8c98a;
+      --serif: 'Cormorant Garamond', Georgia, serif;
+      --sans: 'Inter', system-ui, sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--black);
+      color: var(--light);
+      font-family: var(--sans);
+      font-weight: 300;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    ::selection { background: var(--accent); color: #000; }
+
+    img { display: block; max-width: 100%; }
+    a { color: inherit; text-decoration: none; }
+
+    /* ===== SCROLLBAR ===== */
+    ::-webkit-scrollbar { width: 4px; }
+    ::-webkit-scrollbar-track { background: var(--black); }
+    ::-webkit-scrollbar-thumb { background: var(--accent); border-radius: 2px; }
+
+    /* ===== UTILITY ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+    .section { padding: 100px 0; }
+    .section--tight { padding: 70px 0; }
+
+    .label {
+      font-family: var(--sans);
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--accent);
+      display: block;
+      margin-bottom: 18px;
+    }
+
+    .heading-xl {
+      font-family: var(--serif);
+      font-size: clamp(2.8rem, 7vw, 6rem);
+      font-weight: 300;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: var(--white);
+    }
+
+    .heading-lg {
+      font-family: var(--serif);
+      font-size: clamp(2rem, 4vw, 3.5rem);
+      font-weight: 300;
+      line-height: 1.1;
+      letter-spacing: -0.01em;
+      color: var(--white);
+    }
+
+    .heading-md {
+      font-family: var(--serif);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      font-weight: 400;
+      color: var(--white);
+    }
+
+    .text-accent { color: var(--accent); }
+    .text-center { text-align: center; }
+    .text-muted { color: var(--gray); }
+
+    .divider {
+      width: 60px;
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+      margin: 24px 0;
+    }
+    .divider--center { margin: 24px auto; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 32px;
+      font-family: var(--sans);
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+      transition: all 0.35s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .btn::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(255,255,255,0.05);
+      transform: translateX(-100%);
+      transition: transform 0.35s ease;
+    }
+    .btn:hover::before { transform: translateX(0); }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+    }
+    .btn-primary:hover {
+      background: var(--accent2);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(201,169,110,0.3);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255,255,255,0.25);
+    }
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .btn-whatsapp {
+      background: #25d366;
+      color: #fff;
+    }
+    .btn-whatsapp:hover {
+      background: #1da851;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 40px rgba(37,211,102,0.3);
+    }
+
+    /* ===== NAV ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 24px;
+      transition: all 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(10,10,10,0.95);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .nav__inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .nav__logo {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      font-weight: 600;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--white);
+    }
+    .nav__logo span { color: var(--accent); }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      transition: color 0.3s;
+    }
+    .nav__links a:hover { color: var(--white); }
+
+    .nav__cta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .nav__hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+    .nav__hamburger span {
+      display: block;
+      width: 24px;
+      height: 1px;
+      background: var(--white);
+      transition: all 0.3s;
+    }
+
+    .nav__mobile {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: var(--black);
+      z-index: 999;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 32px;
+    }
+    .nav__mobile.open { display: flex; }
+    .nav__mobile a {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+    .nav__mobile a:hover { color: var(--accent); }
+    .nav__mobile-close {
+      position: absolute;
+      top: 24px; right: 24px;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--gray);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      padding: 120px 0 80px;
+    }
+
+    .hero__bg {
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 80% 60% at 70% 50%, rgba(201,169,110,0.07) 0%, transparent 60%),
+                  radial-gradient(ellipse 40% 40% at 20% 80%, rgba(201,169,110,0.04) 0%, transparent 50%);
+    }
+
+    .hero__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      border: 1px solid rgba(201,169,110,0.3);
+      margin-bottom: 28px;
+    }
+    .hero__badge span { font-size: 10px; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); }
+    .hero__badge::before {
+      content: '';
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background: var(--accent);
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+
+    .hero__title { margin-bottom: 24px; }
+    .hero__title em { font-style: italic; color: var(--accent); }
+
+    .hero__sub {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--gray);
+      max-width: 460px;
+      margin-bottom: 40px;
+    }
+
+    .hero__actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .hero__brands {
+      margin-top: 60px;
+      padding-top: 40px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .hero__brands-label {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gray2);
+      margin-bottom: 20px;
+    }
+    .hero__brands-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .hero__brand-tag {
+      font-family: var(--serif);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+      padding: 6px 14px;
+      border: 1px solid rgba(255,255,255,0.08);
+      transition: all 0.3s;
+    }
+    .hero__brand-tag:hover { border-color: var(--accent); color: var(--accent); }
+
+    .hero__visual {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero__watch-frame {
+      position: relative;
+      width: 100%;
+      max-width: 480px;
+    }
+
+    .hero__watch-img {
+      width: 100%;
+      border-radius: 2px;
+      filter: brightness(0.9) contrast(1.05);
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .hero__glow {
+      position: absolute;
+      inset: -20%;
+      background: radial-gradient(ellipse, rgba(201,169,110,0.12) 0%, transparent 60%);
+      pointer-events: none;
+    }
+
+    .hero__watch-placeholder {
+      width: 100%;
+      aspect-ratio: 3/4;
+      background: linear-gradient(135deg, var(--dark2) 0%, var(--dark3) 50%, var(--dark2) 100%);
+      border: 1px solid rgba(201,169,110,0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      animation: float 6s ease-in-out infinite;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero__watch-placeholder::before {
+      content: '';
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: conic-gradient(from 0deg, transparent, rgba(201,169,110,0.05), transparent);
+      animation: rotate 12s linear infinite;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .watch-icon {
+      font-size: 5rem;
+      filter: drop-shadow(0 0 30px rgba(201,169,110,0.4));
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero__watch-placeholder p {
+      font-family: var(--serif);
+      font-size: 0.9rem;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      opacity: 0.7;
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ===== TICKER ===== */
+    .ticker {
+      background: var(--accent);
+      padding: 12px 0;
+      overflow: hidden;
+    }
+    .ticker__inner {
+      display: flex;
+      gap: 0;
+      animation: ticker 30s linear infinite;
+      white-space: nowrap;
+    }
+    .ticker__item {
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: #000;
+      padding: 0 32px;
+      flex-shrink: 0;
+    }
+    .ticker__item::after {
+      content: '·';
+      margin-left: 32px;
+    }
+
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    /* ===== WHY US ===== */
+    .why { background: var(--dark); }
+
+    .why__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.05);
+      margin-top: 60px;
+    }
+
+    .why__card {
+      background: var(--dark);
+      padding: 48px 32px;
+      text-align: center;
+      transition: background 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+    .why__card::before {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, var(--accent), transparent);
+      transform: scaleX(0);
+      transition: transform 0.4s;
+    }
+    .why__card:hover { background: var(--dark2); }
+    .why__card:hover::before { transform: scaleX(1); }
+
+    .why__icon {
+      font-size: 2.2rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+
+    .why__title {
+      font-family: var(--serif);
+      font-size: 1.15rem;
+      font-weight: 500;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .why__text {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.6;
+    }
+
+    /* ===== STORY ===== */
+    .story__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: center;
+    }
+
+    .story__visual {
+      position: relative;
+    }
+
+    .story__img-frame {
+      aspect-ratio: 4/5;
+      background: linear-gradient(135deg, var(--dark2), var(--dark3));
+      border: 1px solid rgba(201,169,110,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .story__img-frame::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,169,110,0.06) 0%, transparent 70%);
+    }
+
+    .story__big-icon {
+      font-size: 8rem;
+      opacity: 0.3;
+      position: relative;
+      z-index: 1;
+    }
+
+    .story__accent-box {
+      position: absolute;
+      bottom: -24px; right: -24px;
+      background: var(--accent);
+      color: #000;
+      padding: 24px 28px;
+      min-width: 160px;
+    }
+    .story__accent-box strong {
+      font-family: var(--serif);
+      font-size: 2.5rem;
+      font-weight: 600;
+      display: block;
+      line-height: 1;
+    }
+    .story__accent-box span {
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .story__text p {
+      font-size: 0.95rem;
+      color: var(--gray);
+      margin-bottom: 16px;
+    }
+
+    .story__quote {
+      margin-top: 32px;
+      padding: 24px 28px;
+      border-left: 2px solid var(--accent);
+      background: rgba(201,169,110,0.04);
+    }
+    .story__quote p {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-style: italic;
+      color: var(--white);
+      margin: 0;
+    }
+
+    /* ===== CATALOG ===== */
+    .catalog { background: var(--dark); }
+
+    .catalog__filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 48px 0 40px;
+      justify-content: center;
+    }
+
+    .filter-btn {
+      padding: 8px 20px;
+      font-size: 11px;
+      font-weight: 500;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.1);
+      color: var(--gray);
+      cursor: pointer;
+      transition: all 0.3s;
+    }
+    .filter-btn:hover, .filter-btn.active {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: rgba(201,169,110,0.05);
+    }
+
+    .catalog__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+
+    .product-card {
+      background: var(--dark2);
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.4s ease;
+    }
+    .product-card:hover { transform: translateY(-4px); }
+
+    .product-card__img {
+      aspect-ratio: 1;
+      background: linear-gradient(135deg, var(--dark3), var(--dark2));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4rem;
+      overflow: hidden;
+      position: relative;
+      transition: transform 0.5s ease;
+    }
+    .product-card:hover .product-card__img { transform: scale(1.04); }
+
+    .product-card__photo {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 1;
+    }
+
+    .product-card__overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      opacity: 0;
+      transition: opacity 0.3s;
+      z-index: 3;
+    }
+    .product-card:hover .product-card__overlay { opacity: 1; }
+
+    .product-card__info {
+      padding: 20px;
+    }
+
+    .product-card__brand {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 6px;
+    }
+
+    .product-card__name {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 8px;
+    }
+
+    .product-card__ref {
+      font-size: 0.8rem;
+      color: var(--gray2);
+    }
+
+    .product-card__badge {
+      position: absolute;
+      top: 14px; left: 14px;
+      padding: 4px 10px;
+      font-size: 9px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      background: var(--accent);
+      color: #000;
+      font-weight: 500;
+    }
+
+    .catalog__cta {
+      text-align: center;
+      margin-top: 48px;
+    }
+
+    .product-card__price {
+      font-family: var(--serif);
+      font-size: 1.25rem;
+      color: var(--accent);
+      margin-top: 12px;
+      font-weight: 500;
+    }
+    .product-card__price small {
+      font-family: var(--sans);
+      font-size: 0.7rem;
+      color: var(--gray);
+      letter-spacing: 1px;
+      margin-left: 4px;
+    }
+    .product-card__stock {
+      position: absolute;
+      top: 14px; right: 14px;
+      padding: 4px 10px;
+      font-size: 9px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      background: rgba(0,0,0,0.6);
+      color: var(--light);
+      border: 1px solid rgba(255,255,255,0.1);
+      z-index: 2;
+    }
+    .product-card__details {
+      margin-top: 10px;
+      font-size: 0.78rem;
+      color: var(--accent);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      opacity: 0.8;
+    }
+
+    /* Catalog loading / empty state */
+    .catalog__state {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 80px 20px;
+      color: var(--gray);
+    }
+    .catalog__state p { margin-top: 16px; font-size: 0.9rem; }
+    .catalog__spinner {
+      display: inline-block;
+      width: 36px; height: 36px;
+      border: 2px solid rgba(201,169,110,0.2);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* Product modal */
+    .modal {
+      position: fixed;
+      inset: 0;
+      z-index: 1100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: rgba(0,0,0,0.85);
+      backdrop-filter: blur(6px);
+    }
+    .modal.open { display: flex; }
+    .modal__box {
+      background: var(--dark);
+      border: 1px solid rgba(201,169,110,0.2);
+      max-width: 560px;
+      width: 100%;
+      max-height: 85vh;
+      overflow-y: auto;
+      position: relative;
+    }
+    .modal__photo {
+      width: 100%;
+      aspect-ratio: 16/10;
+      background: linear-gradient(135deg, var(--dark3), var(--dark2));
+      overflow: hidden;
+      display: none;
+    }
+    .modal__photo.show { display: block; }
+    .modal__photo img { width: 100%; height: 100%; object-fit: cover; }
+    .modal__header {
+      padding: 32px 32px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      position: relative;
+    }
+    .modal__close {
+      position: absolute;
+      top: 20px; right: 24px;
+      font-size: 1.5rem;
+      color: var(--gray);
+      cursor: pointer;
+      line-height: 1;
+      transition: color 0.3s;
+    }
+    .modal__close:hover { color: var(--accent); }
+    .modal__brand {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 8px;
+    }
+    .modal__name {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      color: var(--white);
+      line-height: 1.2;
+      padding-right: 30px;
+    }
+    .modal__price {
+      font-family: var(--serif);
+      font-size: 1.8rem;
+      color: var(--accent);
+      margin-top: 12px;
+    }
+    .modal__price small { font-family: var(--sans); font-size: 0.8rem; color: var(--gray); }
+    .modal__body { padding: 24px 32px; }
+    .modal__desc {
+      font-size: 0.85rem;
+      color: var(--light);
+      line-height: 1.7;
+      white-space: pre-line;
+    }
+    .modal__ref { font-size: 0.8rem; color: var(--gray); margin-bottom: 16px; }
+    .modal__footer { padding: 0 32px 32px; }
+    .modal__footer .btn { width: 100%; justify-content: center; }
+
+    /* ===== HOW TO BUY ===== */
+    .how {
+      position: relative;
+      overflow: hidden;
+    }
+    .how::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 50%, rgba(201,169,110,0.04) 0%, transparent 70%);
+    }
+
+    .how__steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2px;
+      margin-top: 60px;
+      position: relative;
+    }
+
+    .how__steps::before {
+      content: '';
+      position: absolute;
+      top: 48px;
+      left: calc(12.5% + 20px);
+      right: calc(12.5% + 20px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--accent), rgba(201,169,110,0.3), var(--accent));
+    }
+
+    .how__step {
+      text-align: center;
+      padding: 40px 24px;
+      position: relative;
+    }
+
+    .how__step-num {
+      width: 56px;
+      height: 56px;
+      border: 1px solid var(--accent);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 24px;
+      font-family: var(--serif);
+      font-size: 1.3rem;
+      color: var(--accent);
+      background: var(--black);
+      position: relative;
+      z-index: 1;
+    }
+
+    .how__step-title {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      color: var(--white);
+      margin-bottom: 10px;
+    }
+
+    .how__step-text {
+      font-size: 0.85rem;
+      color: var(--gray);
+    }
+
+    /* ===== PAYMENTS ===== */
+    .payments { background: var(--dark); }
+
+    .payments__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 48px;
+    }
+
+    .payment-item {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 20px 24px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--dark2);
+      transition: border-color 0.3s;
+    }
+    .payment-item:hover { border-color: rgba(201,169,110,0.3); }
+
+    .payment-item__icon {
+      font-size: 1.8rem;
+      flex-shrink: 0;
+    }
+
+    .payment-item__label {
+      font-size: 0.9rem;
+      color: var(--light);
+      font-weight: 400;
+    }
+
+    /* ===== SHIPPING ===== */
+    .shipping__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .shipping__text h2 { margin-bottom: 20px; }
+    .shipping__text p { color: var(--gray); margin-bottom: 16px; }
+
+    .shipping__highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 28px;
+      background: linear-gradient(135deg, rgba(201,169,110,0.1), rgba(201,169,110,0.05));
+      border: 1px solid rgba(201,169,110,0.3);
+      margin-top: 12px;
+    }
+    .shipping__highlight span { font-size: 1.5rem; }
+    .shipping__highlight p { font-family: var(--serif); font-size: 1rem; color: var(--white); margin: 0; }
+    .shipping__highlight strong { color: var(--accent); }
+
+    .shipping__visual {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .shipping__stat {
+      padding: 28px 32px;
+      border: 1px solid rgba(255,255,255,0.06);
+      background: var(--dark);
+    }
+    .shipping__stat strong {
+      font-family: var(--serif);
+      font-size: 2rem;
+      color: var(--accent);
+      display: block;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .shipping__stat span { font-size: 0.85rem; color: var(--gray); }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials { background: var(--dark); }
+
+    .testimonials__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 60px;
+    }
+
+    .testimonial-card {
+      padding: 36px;
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.05);
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .testimonial-card:hover { border-color: rgba(201,169,110,0.2); transform: translateY(-4px); }
+
+    .testimonial-card::before {
+      content: '"';
+      position: absolute;
+      top: -10px; left: 24px;
+      font-family: var(--serif);
+      font-size: 8rem;
+      color: var(--accent);
+      opacity: 0.07;
+      line-height: 1;
+      pointer-events: none;
+    }
+
+    .testimonial-card__stars {
+      color: var(--accent);
+      font-size: 0.85rem;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    .testimonial-card__text {
+      font-size: 0.9rem;
+      line-height: 1.7;
+      color: var(--light);
+      margin-bottom: 24px;
+      font-style: italic;
+    }
+
+    .testimonial-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .testimonial-card__avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--dark3));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: #000;
+      flex-shrink: 0;
+    }
+
+    .testimonial-card__name {
+      font-size: 0.85rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+    .testimonial-card__loc {
+      font-size: 0.78rem;
+      color: var(--gray);
+    }
+
+    /* ===== FAQ ===== */
+    .faq__list {
+      max-width: 800px;
+      margin: 60px auto 0;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      overflow: hidden;
+    }
+
+    .faq-item__q {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 24px 0;
+      cursor: pointer;
+      transition: color 0.3s;
+      gap: 16px;
+    }
+    .faq-item__q:hover { color: var(--accent); }
+
+    .faq-item__q-text {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      color: var(--white);
+      transition: color 0.3s;
+    }
+    .faq-item__q:hover .faq-item__q-text { color: var(--accent); }
+
+    .faq-item__icon {
+      width: 28px;
+      height: 28px;
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.2rem;
+      color: var(--gray);
+      transition: all 0.3s;
+      flex-shrink: 0;
+    }
+    .faq-item.open .faq-item__icon {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: rotate(45deg);
+    }
+
+    .faq-item__a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.4s ease;
+    }
+    .faq-item.open .faq-item__a { max-height: 300px; padding-bottom: 24px; }
+
+    .faq-item__a p {
+      font-size: 0.9rem;
+      color: var(--gray);
+      line-height: 1.7;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact { background: var(--dark); }
+
+    .contact__inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .contact__info { padding-top: 8px; }
+    .contact__info h2 { margin-bottom: 16px; }
+    .contact__info p { color: var(--gray); margin-bottom: 32px; }
+
+    .contact__channels { display: flex; flex-direction: column; gap: 16px; }
+
+    .contact__channel {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 20px;
+      border: 1px solid rgba(255,255,255,0.06);
+      transition: border-color 0.3s;
+    }
+    .contact__channel:hover { border-color: rgba(201,169,110,0.3); }
+    .contact__channel-icon { font-size: 1.4rem; }
+    .contact__channel-label { font-size: 0.85rem; color: var(--gray); }
+    .contact__channel-value { font-size: 0.9rem; color: var(--white); font-weight: 400; }
+
+    .contact__form { display: flex; flex-direction: column; gap: 16px; }
+
+    .form-group { display: flex; flex-direction: column; gap: 8px; }
+
+    .form-label {
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gray);
+    }
+
+    .form-input, .form-textarea, .form-select {
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.08);
+      color: var(--white);
+      padding: 14px 18px;
+      font-family: var(--sans);
+      font-size: 0.9rem;
+      font-weight: 300;
+      outline: none;
+      transition: border-color 0.3s;
+      width: 100%;
+    }
+    .form-input:focus, .form-textarea:focus, .form-select:focus {
+      border-color: var(--accent);
+    }
+    .form-input::placeholder, .form-textarea::placeholder { color: var(--gray2); }
+    .form-textarea { resize: vertical; min-height: 100px; }
+    .form-select option { background: var(--dark2); }
+
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      background: #050505;
+      border-top: 1px solid rgba(255,255,255,0.04);
+      padding: 70px 0 32px;
+    }
+
+    .footer__top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 56px;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+
+    .footer__brand-name {
+      font-family: var(--serif);
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 16px;
+    }
+    .footer__brand-name span { color: var(--accent); }
+
+    .footer__tagline {
+      font-family: var(--serif);
+      font-size: 0.95rem;
+      font-style: italic;
+      color: var(--gray);
+      margin-bottom: 24px;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 12px;
+    }
+    .footer__social-link {
+      width: 40px;
+      height: 40px;
+      border: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      transition: all 0.3s;
+    }
+    .footer__social-link:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      transform: translateY(-2px);
+    }
+
+    .footer__col-title {
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 20px;
+    }
+
+    .footer__links { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .footer__links a {
+      font-size: 0.85rem;
+      color: var(--gray);
+      transition: color 0.3s;
+    }
+    .footer__links a:hover { color: var(--white); }
+
+    .footer__bottom {
+      padding-top: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+    }
+    .footer__copy { font-size: 0.78rem; color: var(--gray2); }
+    .footer__bottom-links {
+      display: flex;
+      gap: 24px;
+    }
+    .footer__bottom-links a { font-size: 0.78rem; color: var(--gray2); transition: color 0.3s; }
+    .footer__bottom-links a:hover { color: var(--gray); }
+
+    /* ===== WHATSAPP FLOAT ===== */
+    .wa-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      z-index: 900;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 12px;
+    }
+
+    .wa-float__bubble {
+      background: var(--dark2);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 12px 18px;
+      font-size: 0.85rem;
+      color: var(--light);
+      max-width: 220px;
+      line-height: 1.4;
+      opacity: 0;
+      transform: translateY(10px) scale(0.95);
+      transition: all 0.3s ease;
+      pointer-events: none;
+    }
+    .wa-float:hover .wa-float__bubble {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+    }
+
+    .wa-float__btn {
+      width: 60px;
+      height: 60px;
+      background: #25d366;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      box-shadow: 0 6px 30px rgba(37,211,102,0.35);
+      transition: transform 0.3s, box-shadow 0.3s;
+      animation: wa-pulse 3s infinite;
+    }
+    .wa-float__btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 10px 40px rgba(37,211,102,0.5);
+    }
+
+    @keyframes wa-pulse {
+      0%, 100% { box-shadow: 0 6px 30px rgba(37,211,102,0.35); }
+      50% { box-shadow: 0 6px 50px rgba(37,211,102,0.6); }
+    }
+
+    /* ===== SCROLL REVEAL ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    /* ===== TOAST ===== */
+    .toast {
+      position: fixed;
+      bottom: 28px; left: 50%;
+      transform: translateX(-50%) translateY(20px);
+      background: var(--accent);
+      color: #000;
+      padding: 14px 28px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 1px;
+      opacity: 0;
+      transition: all 0.3s;
+      z-index: 9999;
+      pointer-events: none;
+    }
+    .toast.show { opacity: 1; transform: translateX(-50%) translateY(0); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .why__grid { grid-template-columns: repeat(2, 1fr); }
+      .catalog__grid { grid-template-columns: repeat(2, 1fr); }
+      .footer__top { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 768px) {
+      .section { padding: 70px 0; }
+      .section--tight { padding: 50px 0; }
+
+      .nav__links, .nav__cta { display: none; }
+      .nav__hamburger { display: flex; }
+
+      .hero__grid { grid-template-columns: 1fr; gap: 40px; }
+      .hero__visual { order: -1; }
+      .hero__watch-placeholder { max-width: 320px; margin: 0 auto; }
+
+      .story__inner { grid-template-columns: 1fr; gap: 40px; }
+      .story__accent-box { right: -12px; bottom: -12px; }
+
+      .how__steps { grid-template-columns: repeat(2, 1fr); }
+      .how__steps::before { display: none; }
+
+      .shipping__inner { grid-template-columns: 1fr; }
+
+      .payments__grid { grid-template-columns: 1fr 1fr; }
+
+      .testimonials__grid { grid-template-columns: 1fr; }
+
+      .contact__inner { grid-template-columns: 1fr; gap: 40px; }
+
+      .footer__top { grid-template-columns: 1fr; gap: 32px; }
+      .footer__bottom { flex-direction: column; text-align: center; }
+
+      .form-row { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 480px) {
+      .heading-xl { font-size: 2.4rem; }
+      .how__steps { grid-template-columns: 1fr; }
+      .payments__grid { grid-template-columns: 1fr; }
+      .catalog__grid { grid-template-columns: 1fr; }
+      .hero__actions { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#" class="nav__logo">HUN<span>N</span>IDS</a>
+      <ul class="nav__links">
+        <li><a href="#catalogo">Catálogo</a></li>
+        <li><a href="#historia">Nosotros</a></li>
+        <li><a href="#como-comprar">Cómo comprar</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="https://wa.me/5492235368360?text=Hola!%20Me%20interesa%20ver%20el%20catálogo%20de%20HUNNIDS" class="btn btn-whatsapp" target="_blank">
+          <span>💬</span> WhatsApp
+        </a>
+      </div>
+      <div class="nav__hamburger" id="hamburger" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav -->
+  <div class="nav__mobile" id="mobileNav">
+    <span class="nav__mobile-close" id="mobileClose">✕</span>
+    <a href="#catalogo" onclick="closeMobile()">Catálogo</a>
+    <a href="#historia" onclick="closeMobile()">Nosotros</a>
+    <a href="#como-comprar" onclick="closeMobile()">Cómo comprar</a>
+    <a href="#faq" onclick="closeMobile()">FAQ</a>
+    <a href="#contacto" onclick="closeMobile()">Contacto</a>
+    <a href="https://wa.me/5492235368360" target="_blank" class="btn btn-whatsapp" style="margin-top:16px">💬 WhatsApp</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" id="inicio">
+    <div class="hero__bg"></div>
+    <div class="container">
+      <div class="hero__grid">
+        <div class="hero__content">
+          <div class="hero__badge"><span>Relojes originales · Argentina</span></div>
+          <h1 class="heading-xl hero__title reveal">
+            El tiempo habla de vos.<br />
+            Elegí el reloj <em>correcto.</em>
+          </h1>
+          <p class="hero__sub reveal reveal-delay-1">
+            Relojes originales seleccionados cuidadosamente para quienes entienden que un reloj es mucho más que dar la hora.
+          </p>
+          <div class="hero__actions reveal reveal-delay-2">
+            <a href="#catalogo" class="btn btn-primary">Ver Catálogo</a>
+            <a href="https://wa.me/5492235368360?text=Hola!%20Quiero%20consultar%20sobre%20relojes%20HUNNIDS" class="btn btn-outline" target="_blank">
+              💬 Consultar por WhatsApp
+            </a>
+          </div>
+          <div class="hero__brands reveal reveal-delay-3">
+            <p class="hero__brands-label">Marcas disponibles</p>
+            <div class="hero__brands-list">
+              <span class="hero__brand-tag">Citizen</span>
+              <span class="hero__brand-tag">Seiko</span>
+              <span class="hero__brand-tag">Bulova</span>
+              <span class="hero__brand-tag">Casio</span>
+              <span class="hero__brand-tag">Orient</span>
+              <span class="hero__brand-tag">y más</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__visual reveal reveal-delay-2">
+          <div class="hero__watch-frame">
+            <div class="hero__glow"></div>
+            <div class="hero__watch-placeholder">
+              <span class="watch-icon">⌚</span>
+              <p>HUNNIDS Collection</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TICKER ===== -->
+  <div class="ticker">
+    <div class="ticker__inner" id="ticker">
+      <span class="ticker__item">Relojes 100% originales</span>
+      <span class="ticker__item">Envíos a todo el país</span>
+      <span class="ticker__item">Atención personalizada</span>
+      <span class="ticker__item">Stock disponible y encargos</span>
+      <span class="ticker__item">Múltiples medios de pago</span>
+      <span class="ticker__item">Citizen · Seiko · Bulova · Casio · Orient</span>
+      <span class="ticker__item">Relojes 100% originales</span>
+      <span class="ticker__item">Envíos a todo el país</span>
+      <span class="ticker__item">Atención personalizada</span>
+      <span class="ticker__item">Stock disponible y encargos</span>
+      <span class="ticker__item">Múltiples medios de pago</span>
+      <span class="ticker__item">Citizen · Seiko · Bulova · Casio · Orient</span>
+    </div>
+  </div>
+
+  <!-- ===== WHY ===== -->
+  <section class="section why" id="ventajas">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Por qué elegirnos</span>
+        <h2 class="heading-lg">Calidad y confianza<br />en cada compra</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="why__grid">
+        <div class="why__card reveal">
+          <span class="why__icon">🕒</span>
+          <h3 class="why__title">100% Originales</h3>
+          <p class="why__text">Solo trabajamos con relojes auténticos. Cada pieza viene con su caja, documentación y garantía original.</p>
+        </div>
+        <div class="why__card reveal reveal-delay-1">
+          <span class="why__icon">🚚</span>
+          <h3 class="why__title">Envíos al país</h3>
+          <p class="why__text">Enviamos a toda Argentina con seguimiento en tiempo real. Envío gratuito en compras superiores a USD 200.</p>
+        </div>
+        <div class="why__card reveal reveal-delay-2">
+          <span class="why__icon">💬</span>
+          <h3 class="why__title">Atención cercana</h3>
+          <p class="why__text">Cada cliente recibe asesoramiento personalizado. Estamos disponibles por WhatsApp para guiarte en tu elección.</p>
+        </div>
+        <div class="why__card reveal reveal-delay-3">
+          <span class="why__icon">🔒</span>
+          <h3 class="why__title">Compra segura</h3>
+          <p class="why__text">Transparencia total en cada transacción. Múltiples medios de pago y comunicación directa en todo momento.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== STORY ===== -->
+  <section class="section" id="historia">
+    <div class="container">
+      <div class="story__inner">
+        <div class="story__visual reveal">
+          <div class="story__img-frame">
+            <span class="story__big-icon">⌚</span>
+          </div>
+          <div class="story__accent-box">
+            <strong>+100</strong>
+            <span>Clientes felices</span>
+          </div>
+        </div>
+
+        <div class="story__text reveal reveal-delay-1">
+          <span class="label">Nuestra historia</span>
+          <h2 class="heading-lg">Nació de una<br /><em style="font-style:italic;color:var(--accent)">pasión genuina</em></h2>
+          <div class="divider"></div>
+          <p>
+            HUNNIDS nació como un proyecto impulsado por la pasión por los relojes, la búsqueda de piezas únicas y el deseo de ayudar a las personas a encontrar el reloj ideal para cada etapa de su vida.
+          </p>
+          <p>
+            Somos un emprendimiento argentino que cree en el trato cercano, la transparencia y la honestidad. No somos una cadena ni un portal impersonal: somos personas apasionadas que cuidan cada detalle de tu experiencia de compra.
+          </p>
+          <p>
+            Trabajamos tanto con stock disponible como con relojes por encargo, porque entendemos que encontrar el reloj perfecto a veces requiere tiempo y búsqueda personalizada.
+          </p>
+          <div class="story__quote">
+            <p>"Cada reloj cuenta una historia. Queremos ayudarte a encontrar la tuya."</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CATALOG ===== -->
+  <section class="section catalog" id="catalogo">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Catálogo</span>
+        <h2 class="heading-lg">Piezas seleccionadas</h2>
+        <div class="divider divider--center"></div>
+        <p class="text-muted" style="max-width:500px;margin:0 auto;font-size:.95rem;">
+          Explorá nuestra selección de relojes originales. Para ver disponibilidad o realizar un encargo, consultanos por WhatsApp.
+        </p>
+      </div>
+
+      <div class="catalog__filters" id="catalogFilters"></div>
+
+      <div class="catalog__grid" id="catalogGrid">
+        <div class="catalog__state" id="catalogState">
+          <span class="catalog__spinner"></span>
+          <p>Cargando catálogo...</p>
+        </div>
+      </div>
+
+      <div class="catalog__cta reveal">
+        <p class="text-muted" style="margin-bottom:20px;font-size:.9rem;">¿No encontrás lo que buscás? Trabajamos por encargo.</p>
+        <a href="https://wa.me/5492235368360?text=Hola!%20Quiero%20hacer%20un%20encargo%20de%20un%20reloj" class="btn btn-outline" target="_blank">
+          💬 Consultar por encargo
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW TO BUY ===== -->
+  <section class="section how" id="como-comprar">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Proceso de compra</span>
+        <h2 class="heading-lg">Cómo comprar</h2>
+        <div class="divider divider--center"></div>
+        <p class="text-muted" style="max-width:450px;margin:0 auto;font-size:.95rem;">
+          Simple, rápido y seguro. En 4 pasos tenés tu reloj en casa.
+        </p>
+      </div>
+
+      <div class="how__steps">
+        <div class="how__step reveal">
+          <div class="how__step-num">01</div>
+          <h3 class="how__step-title">Elegí tu reloj</h3>
+          <p class="how__step-text">Explorá el catálogo o escribinos para recibir asesoramiento personalizado según tu estilo y presupuesto.</p>
+        </div>
+        <div class="how__step reveal reveal-delay-1">
+          <div class="how__step-num">02</div>
+          <h3 class="how__step-title">Consultá disponibilidad</h3>
+          <p class="how__step-text">Verificamos el stock disponible o coordinamos tu encargo. Te informamos tiempos y detalles del envío.</p>
+        </div>
+        <div class="how__step reveal reveal-delay-2">
+          <div class="how__step-num">03</div>
+          <h3 class="how__step-title">Realizá el pago</h3>
+          <p class="how__step-text">Transferencia, efectivo o cripto. Aceptamos pesos y dólares para mayor comodidad.</p>
+        </div>
+        <div class="how__step reveal reveal-delay-3">
+          <div class="how__step-num">04</div>
+          <h3 class="how__step-title">Recibilo en casa</h3>
+          <p class="how__step-text">Enviamos con seguimiento a toda Argentina. Recibirás tu reloj original con caja y documentación.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== PAYMENTS ===== -->
+  <section class="section--tight payments" id="pagos">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Medios de pago</span>
+        <h2 class="heading-md">Pagá como prefieras</h2>
+      </div>
+
+      <div class="payments__grid">
+        <div class="payment-item reveal">
+          <span class="payment-item__icon">🏦</span>
+          <div>
+            <p class="payment-item__label">Transferencia</p>
+            <p class="payment-item__label" style="color:var(--white)">En pesos argentinos</p>
+          </div>
+        </div>
+        <div class="payment-item reveal reveal-delay-1">
+          <span class="payment-item__icon">💵</span>
+          <div>
+            <p class="payment-item__label">Transferencia</p>
+            <p class="payment-item__label" style="color:var(--white)">En dólares</p>
+          </div>
+        </div>
+        <div class="payment-item reveal reveal-delay-2">
+          <span class="payment-item__icon">💴</span>
+          <div>
+            <p class="payment-item__label">Efectivo</p>
+            <p class="payment-item__label" style="color:var(--white)">En pesos o dólares</p>
+          </div>
+        </div>
+        <div class="payment-item reveal">
+          <span class="payment-item__icon">🇺🇸</span>
+          <div>
+            <p class="payment-item__label">Cuenta bancaria</p>
+            <p class="payment-item__label" style="color:var(--white)">Banco estadounidense (USD)</p>
+          </div>
+        </div>
+        <div class="payment-item reveal reveal-delay-1">
+          <span class="payment-item__icon">₿</span>
+          <div>
+            <p class="payment-item__label">Criptomonedas</p>
+            <p class="payment-item__label" style="color:var(--white)">BTC, USDT y más</p>
+          </div>
+        </div>
+        <div class="payment-item reveal reveal-delay-2" style="background:linear-gradient(135deg,rgba(201,169,110,0.08),rgba(201,169,110,0.03));border-color:rgba(201,169,110,0.2)">
+          <span class="payment-item__icon">💬</span>
+          <div>
+            <p class="payment-item__label">¿Otra forma?</p>
+            <p class="payment-item__label" style="color:var(--accent)">Consultanos por WhatsApp</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SHIPPING ===== -->
+  <section class="section" id="envios">
+    <div class="container">
+      <div class="shipping__inner">
+        <div class="shipping__text reveal">
+          <span class="label">Envíos</span>
+          <h2 class="heading-lg">Tu reloj,<br />donde estés</h2>
+          <div class="divider"></div>
+          <p>Realizamos envíos a toda la Argentina con los operadores logísticos más confiables del país. Cada envío incluye número de seguimiento para que puedas rastrear tu pedido en tiempo real.</p>
+          <p>Trabajamos con embalaje especial para garantizar que tu reloj llegue en perfectas condiciones, protegido y seguro.</p>
+          <div class="shipping__highlight">
+            <span>🎁</span>
+            <p><strong>Envío gratis</strong> en compras superiores a USD 200</p>
+          </div>
+        </div>
+
+        <div class="shipping__visual reveal reveal-delay-1">
+          <div class="shipping__stat">
+            <strong>24-72hs</strong>
+            <span>Tiempo estimado de entrega en AMBA</span>
+          </div>
+          <div class="shipping__stat">
+            <strong>100%</strong>
+            <span>Paquetes con seguimiento incluido</span>
+          </div>
+          <div class="shipping__stat">
+            <strong>Todo ARG</strong>
+            <span>Enviamos a cualquier provincia del país</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIALS ===== -->
+  <section class="section testimonials" id="testimonios">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Testimonios</span>
+        <h2 class="heading-lg">Lo que dicen<br />nuestros clientes</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="testimonials__grid">
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Compré un Seiko Presage por encargo y la experiencia fue excelente. Comunicación constante, muy honesto con los tiempos y el reloj llegó perfecto con toda la documentación."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">M</div>
+            <div>
+              <p class="testimonial-card__name">Martín R.</p>
+              <p class="testimonial-card__loc">Buenos Aires</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Me asesoraron súper bien para elegir un Citizen Eco-Drive. No me vendieron cualquier cosa, me explicaron cada opción y me recomendaron el que más se adaptaba a lo que buscaba."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">V</div>
+            <div>
+              <p class="testimonial-card__name">Valentina C.</p>
+              <p class="testimonial-card__loc">Córdoba</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Rapidísimos y muy confiables. El G-Shock llegó en 48hs y venía con todo. La atención por WhatsApp fue inmediata. Ya les recomendé a varios amigos."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">L</div>
+            <div>
+              <p class="testimonial-card__name">Lucas P.</p>
+              <p class="testimonial-card__loc">Rosario</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Compré un Orient automático y quedé encantado. Precio justo, reloj 100% original, llegó antes de lo prometido. Sin dudas voy a volver a comprar."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">F</div>
+            <div>
+              <p class="testimonial-card__name">Federico G.</p>
+              <p class="testimonial-card__loc">Mendoza</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-1">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Le regalé un Bulova a mi papá por su cumpleaños. HUNNIDS me ayudó a elegirlo y lo embalaron de lujo. Fue un regalo increíble. Muy agradecida con la atención."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">S</div>
+            <div>
+              <p class="testimonial-card__name">Sofía T.</p>
+              <p class="testimonial-card__loc">La Plata</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card reveal reveal-delay-2">
+          <div class="testimonial-card__stars">★★★★★</div>
+          <p class="testimonial-card__text">
+            "Lo que más me gustó fue la transparencia. Me dijeron exactamente qué esperan del reloj, los tiempos reales y el estado del pedido. Confianza total desde el primer mensaje."
+          </p>
+          <div class="testimonial-card__author">
+            <div class="testimonial-card__avatar">A</div>
+            <div>
+              <p class="testimonial-card__name">Alejandro M.</p>
+              <p class="testimonial-card__loc">Tucumán</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="section" id="faq">
+    <div class="container">
+      <div class="text-center reveal">
+        <span class="label">Preguntas frecuentes</span>
+        <h2 class="heading-lg">Todo lo que<br />necesitás saber</h2>
+        <div class="divider divider--center"></div>
+      </div>
+
+      <div class="faq__list">
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Los relojes son 100% originales?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Sí, absolutamente. Todos los relojes que comercializamos son 100% originales y auténticos. Trabajamos únicamente con fuentes verificadas y cada pieza viene con su caja, manuales y garantía del fabricante. Nunca vendemos réplicas ni falsificaciones.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Hacen envíos a todo el país?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Sí, enviamos a toda Argentina. Trabajamos con operadores logísticos confiables y cada envío incluye número de seguimiento. El tiempo estimado varía según la provincia, pero generalmente es de 24 a 72 horas en AMBA y 3 a 7 días al interior.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Trabajan por encargo?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Sí. Si tenés en mente un modelo específico que no está en el catálogo, podés consultarnos para hacer un encargo personalizado. Te informamos los tiempos y condiciones para conseguir exactamente el reloj que buscás.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Qué medios de pago aceptan?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Aceptamos transferencia bancaria en pesos o dólares, efectivo en pesos o dólares, transferencia a cuenta bancaria estadounidense y criptomonedas (BTC, USDT y otras). Para más opciones, consultanos directamente por WhatsApp.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Los relojes tienen garantía?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Sí. Al ser relojes 100% originales, todos vienen con la garantía oficial del fabricante. Además, desde HUNNIDS brindamos soporte posventa para ayudarte con cualquier consulta o inconveniente que pueda surgir.</p>
+          </div>
+        </div>
+
+        <div class="faq-item reveal">
+          <div class="faq-item__q">
+            <span class="faq-item__q-text">¿Puedo ver más fotos o videos del reloj antes de comprar?</span>
+            <span class="faq-item__icon">+</span>
+          </div>
+          <div class="faq-item__a">
+            <p>Por supuesto. Si tenés stock disponible, podemos enviarte fotos y videos reales del reloj por WhatsApp antes de confirmar la compra. Queremos que te sientas 100% seguro con tu decisión.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section class="section contact" id="contacto">
+    <div class="container">
+      <div class="contact__inner">
+        <div class="contact__info reveal">
+          <span class="label">Contacto</span>
+          <h2 class="heading-lg">Hablemos</h2>
+          <div class="divider"></div>
+          <p>
+            Estamos disponibles para asesorarte, resolver tus dudas y ayudarte a encontrar el reloj perfecto. No dudes en escribirnos.
+          </p>
+
+          <div class="contact__channels">
+            <a href="https://wa.me/5492235368360" class="contact__channel" target="_blank">
+              <span class="contact__channel-icon">💬</span>
+              <div>
+                <p class="contact__channel-label">WhatsApp</p>
+                <p class="contact__channel-value">+54 9 11 0000-0000</p>
+              </div>
+            </a>
+            <a href="https://instagram.com/hunnidsrelojes" class="contact__channel" target="_blank">
+              <span class="contact__channel-icon">📸</span>
+              <div>
+                <p class="contact__channel-label">Instagram</p>
+                <p class="contact__channel-value">@hunnidsrelojes</p>
+              </div>
+            </a>
+            <a href="mailto:contacto@hunnids.com" class="contact__channel">
+              <span class="contact__channel-icon">✉️</span>
+              <div>
+                <p class="contact__channel-label">Email</p>
+                <p class="contact__channel-value">contacto@hunnids.com</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal reveal-delay-1">
+          <span class="label">Formulario</span>
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Nombre</label>
+                <input class="form-input" type="text" name="name" placeholder="Tu nombre" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Teléfono</label>
+                <input class="form-input" type="tel" name="phone" placeholder="+54 9 11..." />
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input class="form-input" type="email" name="email" placeholder="tu@email.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label">¿Qué reloj te interesa?</label>
+              <select class="form-select" name="brand">
+                <option value="">Seleccioná una marca</option>
+                <option>Citizen</option>
+                <option>Seiko</option>
+                <option>Bulova</option>
+                <option>Casio</option>
+                <option>Orient</option>
+                <option>Otro / No sé aún</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mensaje</label>
+              <textarea class="form-textarea" name="message" placeholder="Contanos qué estás buscando..." required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">
+              Enviar consulta
+            </button>
+            <p style="font-size:.78rem;color:var(--gray2);text-align:center;margin-top:8px;">
+              También podés escribirnos directamente por <a href="https://wa.me/5492235368360" style="color:var(--accent)" target="_blank">WhatsApp</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__top">
+        <div>
+          <p class="footer__brand-name">HUN<span>N</span>IDS</p>
+          <p class="footer__tagline">"El tiempo pasa. El estilo permanece."</p>
+          <div class="footer__social">
+            <a href="https://instagram.com/hunnidsrelojes" class="footer__social-link" target="_blank" aria-label="Instagram">📸</a>
+            <a href="https://wa.me/5492235368360" class="footer__social-link" target="_blank" aria-label="WhatsApp">💬</a>
+            <a href="mailto:contacto@hunnids.com" class="footer__social-link" aria-label="Email">✉️</a>
+          </div>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Navegación</p>
+          <ul class="footer__links">
+            <li><a href="#catalogo">Catálogo</a></li>
+            <li><a href="#historia">Nuestra historia</a></li>
+            <li><a href="#como-comprar">Cómo comprar</a></li>
+            <li><a href="#testimonios">Testimonios</a></li>
+            <li><a href="#faq">Preguntas frecuentes</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Marcas</p>
+          <ul class="footer__links">
+            <li><a href="#catalogo">Citizen</a></li>
+            <li><a href="#catalogo">Seiko</a></li>
+            <li><a href="#catalogo">Bulova</a></li>
+            <li><a href="#catalogo">Casio</a></li>
+            <li><a href="#catalogo">Orient</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <p class="footer__col-title">Contacto</p>
+          <ul class="footer__links">
+            <li><a href="https://wa.me/5492235368360" target="_blank">WhatsApp</a></li>
+            <li><a href="https://instagram.com/hunnidsrelojes" target="_blank">@hunnidsrelojes</a></li>
+            <li><a href="mailto:contacto@hunnids.com">Email</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__copy">© 2024 HUNNIDS. Relojes Originales. Argentina.</p>
+        <div class="footer__bottom-links">
+          <a href="#">Política de privacidad</a>
+          <a href="#">Términos y condiciones</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== PRODUCT MODAL ===== -->
+  <div class="modal" id="productModal">
+    <div class="modal__box">
+      <div class="modal__photo" id="modalPhotoWrap"><img id="modalPhoto" alt="" /></div>
+      <div class="modal__header">
+        <span class="modal__close" id="modalClose">✕</span>
+        <p class="modal__brand" id="modalBrand"></p>
+        <h3 class="modal__name" id="modalName"></h3>
+        <p class="modal__price" id="modalPrice"></p>
+      </div>
+      <div class="modal__body">
+        <p class="modal__ref" id="modalRef"></p>
+        <p class="modal__desc" id="modalDesc"></p>
+      </div>
+      <div class="modal__footer">
+        <a href="#" class="btn btn-whatsapp" id="modalWa" target="_blank">💬 Consultar por este reloj</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== WHATSAPP FLOAT ===== -->
+  <div class="wa-float">
+    <div class="wa-float__bubble">
+      ¡Hola! ¿Necesitás ayuda para elegir tu reloj?
+    </div>
+    <a href="https://wa.me/5492235368360?text=Hola!%20Estoy%20visitando%20la%20web%20de%20HUNNIDS%20y%20quiero%20consultar." class="wa-float__btn" target="_blank" aria-label="WhatsApp">
+      💬
+    </a>
+  </div>
+
+  <!-- ===== TOAST ===== -->
+  <div class="toast" id="toast"></div>
+
+  <!-- ===== JAVASCRIPT ===== -->
+  <script>
+    // Nav scroll
+    const nav = document.getElementById('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 50);
+    });
+
+    // Mobile nav
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    const mobileClose = document.getElementById('mobileClose');
+
+    hamburger.addEventListener('click', () => mobileNav.classList.add('open'));
+    mobileClose.addEventListener('click', () => mobileNav.classList.remove('open'));
+    function closeMobile() { mobileNav.classList.remove('open'); }
+
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    const revealObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1 });
+    reveals.forEach(r => revealObs.observe(r));
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-item__q').forEach(q => {
+      q.addEventListener('click', () => {
+        const item = q.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+        if (!isOpen) item.classList.add('open');
+      });
+    });
+
+    /* ============================================================
+       CATÁLOGO EN VIVO desde Google Sheets
+       ------------------------------------------------------------
+       👉 Pegá acá el link CSV de tu pestaña PÚBLICA "limpia"
+          (Archivo → Compartir → Publicar en la web → CSV).
+          Mientras tanto usa el link actual.
+       ============================================================ */
+    const SHEET_CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vQ1Dw5174YuQ2_IY8dU__e_E4qGnv2ENNrpcc6XY3m89RRLQ0oxixZFXH71s5V1yGbZ-yygS7z9YkMP/pub?gid=96470779&single=true&output=csv";
+    const WA_NUMBER = "5492235368360";
+
+    const BRANDS = ['Citizen','Seiko','Bulova','Casio','Orient','Tissot','Invicta','Festina','Tsuyosa'];
+    const BRAND_ALIAS = { 'Tsuyosa': 'Citizen' }; // Tsuyosa es línea de Citizen
+
+    /* Copia de respaldo del stock (generada desde tu planilla).
+       Se usa SOLO si la carga en vivo falla, para que el catálogo nunca quede vacío.
+       Cada item ya trae { stock:1 } por defecto en el render. */
+    const FALLBACK = [{"ref": "97P160", "name": "Bulova Women's Diamond Accent Quartz Gold Stainless Steel Watch 26MM 97P160", "brand": "Bulova", "price": "USD 180", "desc": "Medidas: Caja 32 mm · Espesor aprox. 8 mm · Ancho de asas 16 mm\nTipo de Cristal: Mineral\nMovimiento: Cuarzo (Miyota)\nPrecisión: ±15 segundos por mes\nMaterial de la caja: Acero inoxidable dorado\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos\nDetalles Adicionales: Índices con cristales\nResistencia al agua: 30 m\nCorrea: Acero inoxidable dorado, brazalete tipo President\nTipo de cierre: Desplegable\nPaís de Origen: Japón (movimiento)"}, {"ref": "SRPD61K1", "name": "Seiko 5 sports Automatic Green Dial Men's Watch Item No. SRPD61K1", "brand": "Seiko", "price": "USD 420", "desc": "Medidas: Caja 42.5 mm · Espesor aprox. 13.4 mm · Lug to lug aprox. 46 mm · Ancho de asas 22 mm\nTipo de Cristal: Hardlex\nMovimiento: Automático (Seiko Cal. 4R36)\nPrecisión: −35 / +45 segundos por día\nReserva de marcha: Aprox. 41 horas\nMaterial de la caja: Acero inoxidable\nFondo de caja: Transparente\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos · Día · Fecha\nDetalles Adicionales: Bisel giratorio unidireccional · Hack seconds · Carga manual\nResistencia al agua: 100 m\nCorrea: Acero inoxidable, brazalete estilo Oyster\nTipo de cierre: Desplegable con seguro\nPaís de Origen: Japón"}, {"ref": "SRPD57K1", "name": "Seiko 5 sports Automatic Black Dial Men's Watch", "brand": "Seiko", "price": "USD 420", "desc": "Medidas: Caja 42.5 mm · Espesor aprox. 13.4 mm · Lug to lug aprox. 46 mm · Ancho de asas 22 mm\nTipo de Cristal: Hardlex\nMovimiento: Automático (Seiko Cal. 4R36)\nPrecisión: −35 / +45 segundos por día\nReserva de marcha: Aprox. 41 horas\nMaterial de la caja: Acero inoxidable con acabado dorado\nFondo de caja: Transparente\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos · Día · Fecha\nDetalles Adicionales: Bisel giratorio unidireccional · Hack seconds · Carga manual\nResistencia al agua: 100 m\nCorrea: Acero inoxidable dorado, brazalete estilo Oyster\nTipo de cierre: Desplegable con seguro\nPaís de Origen: Japón"}, {"ref": "CA4288-86L", "name": "Citizen Men's Sport Chronograph Date Eco-Drive Silver Watch 44 MM CA4288-86L", "brand": "Citizen", "price": "USD 240", "desc": "Medidas: Caja 44 mm · Espesor aprox. 12 mm · Lug to lug aprox. 50 mm · Ancho de asas 22 mm\nTipo de Cristal: Mineral\nMovimiento: Eco-Drive cronógrafo (Citizen Cal. B612)\nPrecisión: ±15 segundos por mes\nReserva de marcha: Aprox. 9 meses\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos · Cronógrafo\nDetalles Adicionales: Fecha\nResistencia al agua: 100 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "NJ0150-81A", "name": "Citizen Tsuyosa Automatic White Dial Stainless Steel Men's Watch", "brand": "Citizen", "price": "USD 440", "desc": "Medidas: Caja 40 mm · Espesor aprox. 11.7 mm · Lug to lug aprox. 45 mm · Ancho de asas 19 mm\nTipo de Cristal: Zafiro\nMovimiento: Automático (Miyota 8210)\nPrecisión: −20 / +40 segundos por día\nReserva de marcha: Aprox. 40 horas\nMaterial de la caja: Acero inoxidable\nFondo de caja: Transparente\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Fecha\nResistencia al agua: 50 m\nCorrea: Acero inoxidable integrado\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "T116.617.37.051.00", "name": "Tissot sport chrono xl fondo negro con numeros en azul", "brand": "Tissot", "price": "USD 270", "desc": "Medidas: Caja 45 mm · Espesor aprox. 11 mm · Lug to lug aprox. 52 mm · Ancho de asas 22 mm\nTipo de Cristal: Zafiro\nMovimiento: Cuarzo cronógrafo (ETA G10.212)\nPrecisión: ±10 segundos por mes\nMaterial de la caja: Acero inoxidable PVD negro\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos · Cronógrafo\nDetalles Adicionales: Fecha · Taquímetro\nResistencia al agua: 100 m\nCorrea: Caucho / textil\nTipo de cierre: Hebilla\nPaís de Origen: Suiza"}, {"ref": "47353", "name": "Invicta Pro Diver Date Quartz Black Dial Green Bezel Men's Watch Item No. 47353", "brand": "Invicta", "price": "USD 110", "desc": "Medidas: Caja 40 mm · Espesor aprox. 11 mm · Lug to lug aprox. 52 mm · Ancho de asas 22 mm\nTipo de Cristal: Flame Fusion\nMovimiento: Cuarzo (TMI)\nPrecisión: ±20 segundos por mes\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Fecha\nResistencia al agua: 200 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "26970", "name": "Invicta Pro Diver Black Dial Stainless Steel 40 mm Men's Watch Item No. 26970", "brand": "Invicta", "price": "USD 110", "desc": "Medidas: Caja 40 mm · Espesor aprox. 11 mm · Lug to lug aprox. 52 mm · Ancho de asas 22 mm\nTipo de Cristal: Flame Fusion\nMovimiento: Cuarzo (TMI)\nPrecisión: ±20 segundos por mes\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Fecha\nResistencia al agua: 200 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "44706", "name": "Invicta Pro Diver Quartz Black Dial Men's Watch Item No. 44706", "brand": "Invicta", "price": "USD 110", "desc": "Medidas: Caja 40 mm · Espesor aprox. 11 mm · Lug to lug aprox. 52 mm · Ancho de asas 22 mm\nTipo de Cristal: Flame Fusion\nMovimiento: Cuarzo (TMI)\nPrecisión: ±20 segundos por mes\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Fecha\nResistencia al agua: 200 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "NJ0200-50E", "name": "Citizen Men's Tsuyosa Date Indicator Silver Automatic Watch 37MM NJ0200-50E", "brand": "Citizen", "price": "USD 400", "desc": "Medidas: Caja 37 mm · Espesor aprox. 11.5 mm · Lug to lug aprox. 43 mm · Ancho de asas 18 mm\nTipo de Cristal: Zafiro\nMovimiento: Automático (Miyota)\nPrecisión: −20 / +40 segundos por día\nReserva de marcha: Aprox. 40 horas\nMaterial de la caja: Acero inoxidable\nFondo de caja: Transparente\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Fecha\nResistencia al agua: 50 m\nCorrea: Acero inoxidable integrado\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "SRPD51K1", "name": "Seiko 5 Sports Automatic Blue Dial Men's Watch", "brand": "Seiko", "price": "USD 400", "desc": "Medidas: Caja 42.5 mm · Espesor aprox. 13.4 mm · Lug to lug aprox. 46 mm · Ancho de asas 22 mm\nTipo de Cristal: Hardlex\nMovimiento: Automático (Seiko 4R36)\nPrecisión: −35 / +45 segundos por día\nReserva de marcha: Aprox. 41 horas\nMaterial de la caja: Acero inoxidable\nFondo de caja: Transparente\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Día · Fecha\nResistencia al agua: 100 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "97P166", "name": "Bulova Women's Sutton Classic Quartz Gemmed Black Leather Watch 21 MM 97P166", "brand": "Bulova", "price": "USD 200", "desc": "Medidas: Caja 21 mm · Espesor aprox. 7 mm · Lug to lug aprox. 28 mm · Ancho de asas 14 mm\nTipo de Cristal: Mineral\nMovimiento: Cuarzo (Miyota)\nPrecisión: ±15 segundos por mes\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos\nDetalles Adicionales: Índices con cristales\nResistencia al agua: 30 m\nCorrea: Cuero negro\nTipo de cierre: Hebilla\nPaís de Origen: Japón"}, {"ref": "97P151", "name": "Bulova Sutton Women's Quartz Diamond Accent Rose Gold Watch 28mm 97P151", "brand": "Bulova", "price": "USD 200", "desc": "Medidas: Caja 28 mm · Espesor aprox. 8 mm · Lug to lug aprox. 32 mm · Ancho de asas 14 mm\nTipo de Cristal: Mineral\nMovimiento: Cuarzo (Miyota)\nPrecisión: ±15 segundos por mes\nMaterial de la caja: Acero inoxidable oro rosa\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos\nDetalles Adicionales: Índices con cristales\nResistencia al agua: 30 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "96A225", "name": "Bulova Serie de Archivo para Hombres Lunar Pilot de 6 Manecillas con Cronógrafo de Cuarzo de Alto Rendimiento en Acero Inoxidable, Correa NATO Negra y Cristal de Zafiro Estilo: 96A225", "brand": "Bulova", "price": "USD 600", "desc": "Medidas: Caja 45 mm · Espesor aprox. 13 mm · Lug to lug aprox. 50 mm · Ancho de asas 22 mm\nTipo de Cristal: Zafiro\nMovimiento: Cuarzo alta precisión (Bulova Precisionist)\nPrecisión: ±10 segundos por año\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: A presión\nFunciones principales: Hora · Minutos · Segundos · Cronógrafo\nDetalles Adicionales: Lunar Pilot\nResistencia al agua: 50 m\nCorrea: NATO\nTipo de cierre: Hebilla\nPaís de Origen: Estados Unidos"}, {"ref": "BN0199-53X", "name": "Citizen Men's Promaster Sea Eco-Drive Stainless Steel Watch, 3-Hand Date, One-Way Rotating Bezel, ISO Compliant, Luminous Hands and Markers", "brand": "Citizen", "price": "USD 400", "desc": "Medidas: Caja 44 mm · Espesor aprox. 12 mm · Lug to lug aprox. 50 mm · Ancho de asas 22 mm\nTipo de Cristal: Zafiro\nMovimiento: Eco-Drive (Citizen Cal. E168)\nPrecisión: ±15 segundos por mes\nReserva de marcha: Aprox. 6 meses\nMaterial de la caja: Acero inoxidable\nFondo de caja: Ciego\nTipo de corona: Atornillada\nFunciones principales: Hora · Minutos · Segundos\nDetalles Adicionales: Diver ISO\nResistencia al agua: 200 m\nCorrea: Acero inoxidable\nTipo de cierre: Desplegable\nPaís de Origen: Japón"}, {"ref": "RA-AC0024L30B", "name": "Orient Classic Automatic Blue Dial Men's Watch Item No. RA-AC0024L30B", "brand": "Orient", "price": "USD 340", "desc": ""}, {"ref": "RA-AP0104S30B", "name": "Orient Bambino Automatic White Dial Men's Watch Item No. RA-AP0104S30B", "brand": "Orient", "price": "USD 370", "desc": ""}, {"ref": "SNK357", "name": "Seiko 5 Automatic Midnight Logo Dial Men's Watch Item No. SNK357", "brand": "Seiko", "price": "USD 240", "desc": ""}, {"ref": "SNK361", "name": "Seiko Men's SNK361 Stainless Steel Analog with Black Dial Watch", "brand": "Seiko", "price": "USD 240", "desc": ""}, {"ref": "F20024/3", "name": "FESTINA Men Analog Quartz Casual Watch Classic Dress Waterproof", "brand": "Festina", "price": "USD 150", "desc": ""}];
+
+    let CATALOG = [];
+    let activeFilter = 'all';
+
+    // --- CSV parser (soporta comillas, comas y saltos de línea internos) ---
+    function parseCSV(text) {
+      const rows = []; let row = []; let field = ''; let inQ = false;
+      for (let i = 0; i < text.length; i++) {
+        const c = text[i], n = text[i+1];
+        if (inQ) {
+          if (c === '"' && n === '"') { field += '"'; i++; }
+          else if (c === '"') { inQ = false; }
+          else { field += c; }
+        } else {
+          if (c === '"') { inQ = true; }
+          else if (c === ',') { row.push(field); field = ''; }
+          else if (c === '\r') { /* ignore */ }
+          else if (c === '\n') { row.push(field); rows.push(row); row = []; field = ''; }
+          else { field += c; }
+        }
+      }
+      if (field.length || row.length) { row.push(field); rows.push(row); }
+      return rows;
+    }
+
+    function findCol(headers, ...names) {
+      const norm = s => s.trim().toLowerCase();
+      for (const name of names) {
+        const idx = headers.findIndex(h => norm(h).includes(norm(name)));
+        if (idx !== -1) return idx;
+      }
+      return -1;
+    }
+
+    function detectBrand(text) {
+      const t = (text || '').toLowerCase();
+      for (const b of BRANDS) {
+        if (t.includes(b.toLowerCase())) return BRAND_ALIAS[b] || b;
+      }
+      return 'Otros';
+    }
+
+    function formatPrice(raw) {
+      const num = (raw || '').replace(/[^0-9.]/g, '');
+      if (!num) return null;
+      return 'USD ' + Math.round(parseFloat(num)).toLocaleString('es-AR');
+    }
+
+    function cleanName(name, fallback) {
+      let n = (name || '').replace(/\s+/g, ' ').trim();
+      if (!n || n === '#N/A' || n === '#REF!') n = fallback || 'Reloj';
+      // recorta nombres muy largos para el título de la card
+      return n;
+    }
+
+    function looksLikeCSV(t) {
+      if (!t || t.length < 20) return false;
+      if (/^\s*<(!doctype|html)/i.test(t)) return false; // página HTML / login
+      return t.includes(',') && /referencia|marca|modelo/i.test(t.slice(0, 400));
+    }
+
+    function fetchWithTimeout(url, ms) {
+      const ctrl = new AbortController();
+      const id = setTimeout(() => ctrl.abort(), ms);
+      return fetch(url, { signal: ctrl.signal }).finally(() => clearTimeout(id));
+    }
+
+    async function fetchCSV() {
+      const bust = (SHEET_CSV_URL.includes('?') ? '&' : '?') + '_=' + Date.now();
+      const sources = [
+        SHEET_CSV_URL + bust,
+        'https://api.allorigins.win/raw?url=' + encodeURIComponent(SHEET_CSV_URL + bust),
+        'https://corsproxy.io/?url=' + encodeURIComponent(SHEET_CSV_URL + bust)
+      ];
+      for (const src of sources) {
+        try {
+          const res = await fetchWithTimeout(src, 6000);
+          if (!res.ok) continue;
+          const text = await res.text();
+          if (looksLikeCSV(text)) return text;
+        } catch (e) { /* probar siguiente fuente */ }
+      }
+      throw new Error('no-source');
+    }
+
+    async function loadCatalog() {
+      try {
+        const text = await fetchCSV();
+        const rows = parseCSV(text);
+        if (rows.length < 2) throw new Error('empty');
+
+        const h = rows[0];
+        const ci = {
+          ref:   findCol(h, 'Referencia', 'Ref'),
+          marca: findCol(h, 'Marca'),
+          modelo:findCol(h, 'Nombre Modelo', 'Modelo'),
+          stock: findCol(h, 'Cantidad en stock', 'stock'),
+          precio:findCol(h, 'PRECIO A VENDER', 'precio a vender', 'Precio'),
+          desc:  findCol(h, 'Descripcion Producto', 'Descripcion', 'Descripción')
+        };
+
+        CATALOG = [];
+        for (let i = 1; i < rows.length; i++) {
+          const r = rows[i];
+          if (!r || r.length <= ci.stock) continue;
+          const stock = parseFloat((r[ci.stock] || '').replace(/[^0-9.-]/g, '')) || 0;
+          if (stock <= 0) continue;
+          const apodo = (r[ci.marca] || '').trim();
+          const modeloRaw = (r[ci.modelo] || '').trim();
+          const name = cleanName(modeloRaw, apodo);
+          CATALOG.push({
+            ref: (r[ci.ref] || '').trim(),
+            apodo,
+            name,
+            brand: detectBrand(modeloRaw + ' ' + apodo),
+            stock,
+            price: formatPrice(ci.precio !== -1 ? r[ci.precio] : ''),
+            desc: ci.desc !== -1 ? (r[ci.desc] || '').trim() : ''
+          });
+        }
+
+        if (!CATALOG.length) throw new Error('nostock');
+        buildFilters();
+        renderCatalog();
+      } catch (err) {
+        // Carga en vivo no disponible → se mantiene la copia de respaldo ya mostrada
+      }
+    }
+
+    function useFallback() {
+      CATALOG = (FALLBACK || []).map(p => ({
+        ref: p.ref || '',
+        apodo: '',
+        name: p.name || 'Reloj',
+        brand: p.brand || detectBrand(p.name || ''),
+        stock: p.stock || 1,
+        price: p.price || null,
+        desc: p.desc || ''
+      }));
+      if (!CATALOG.length) {
+        document.getElementById('catalogState').innerHTML =
+          '<p>Escribinos por WhatsApp y te mostramos el stock disponible.</p>' +
+          '<a href="https://wa.me/' + WA_NUMBER + '?text=Hola!%20Quiero%20ver%20el%20stock%20disponible" class="btn btn-whatsapp" target="_blank" style="margin-top:20px">💬 Ver stock por WhatsApp</a>';
+        return;
+      }
+      buildFilters();
+      renderCatalog();
+    }
+
+    function buildFilters() {
+      const cont = document.getElementById('catalogFilters');
+      const brands = [...new Set(CATALOG.map(p => p.brand))].sort();
+      let html = '<button class="filter-btn active" data-filter="all">Todos</button>';
+      brands.forEach(b => { html += '<button class="filter-btn" data-filter="' + b + '">' + b + '</button>'; });
+      cont.innerHTML = html;
+      cont.querySelectorAll('.filter-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          cont.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          activeFilter = btn.dataset.filter;
+          renderCatalog();
+        });
+      });
+    }
+
+    function esc(s) { return (s || '').replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c])); }
+
+    /* ===== FOTOS =====
+       Poné las fotos en la carpeta  img/  con el nombre = referencia del reloj
+       en minúsculas y sin símbolos raros (ej: ref "CA4288-86L" -> img/ca4288-86l.jpg).
+       Acepta .jpg .jpeg .png .webp. Si no hay foto, se muestra el ícono ⌚. */
+    const IMG_DIR = 'img/';
+    const IMG_EXT = ['jpg', 'jpeg', 'png', 'webp'];
+    function imgSlug(ref) {
+      return (ref || '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+    }
+    // Asigna una foto a un <img>, probando varias extensiones; onFail si ninguna existe.
+    function loadPhoto(imgEl, ref, onFail) {
+      const slug = imgSlug(ref);
+      if (!slug) { if (onFail) onFail(); return; }
+      let i = 0;
+      imgEl.onerror = () => {
+        i++;
+        if (i < IMG_EXT.length) imgEl.src = IMG_DIR + slug + '.' + IMG_EXT[i];
+        else if (onFail) onFail();
+      };
+      imgEl.src = IMG_DIR + slug + '.' + IMG_EXT[0];
+    }
+
+    function renderCatalog() {
+      const grid = document.getElementById('catalogGrid');
+      const list = CATALOG.filter(p => activeFilter === 'all' || p.brand === activeFilter);
+      grid.innerHTML = '';
+      list.forEach((p, i) => {
+        const card = document.createElement('div');
+        card.className = 'product-card reveal visible';
+        const stockTxt = p.stock > 1 ? p.stock + ' disponibles' : 'Última unidad';
+        card.innerHTML =
+          '<div class="product-card__img">' +
+            '<span style="font-size:5rem;opacity:.6">⌚</span>' +
+            '<span class="product-card__stock">' + stockTxt + '</span>' +
+            '<div class="product-card__overlay"><span class="btn btn-primary">Ver detalle</span></div>' +
+          '</div>' +
+          '<div class="product-card__info">' +
+            '<p class="product-card__brand">' + esc(p.brand) + '</p>' +
+            '<h3 class="product-card__name">' + esc(p.name) + '</h3>' +
+            (p.ref ? '<p class="product-card__ref">Ref. ' + esc(p.ref) + '</p>' : '') +
+            (p.price ? '<p class="product-card__price">' + esc(p.price) + '</p>' : '<p class="product-card__details">Consultar precio</p>') +
+          '</div>';
+        // Foto del reloj (si existe en /img); si no, queda el ícono ⌚
+        const imgWrap = card.querySelector('.product-card__img');
+        const photo = document.createElement('img');
+        photo.className = 'product-card__photo';
+        photo.alt = p.name;
+        photo.loading = 'lazy';
+        loadPhoto(photo, p.ref, () => photo.remove());
+        imgWrap.insertBefore(photo, imgWrap.firstChild);
+        card.addEventListener('click', () => openModal(p));
+        grid.appendChild(card);
+      });
+      if (!list.length) {
+        grid.innerHTML = '<div class="catalog__state"><p>No hay relojes de esta marca en stock por ahora.</p></div>';
+      }
+    }
+
+    // --- Modal ---
+    const modal = document.getElementById('productModal');
+    function openModal(p) {
+      document.getElementById('modalBrand').textContent = p.brand;
+      document.getElementById('modalName').textContent = p.name;
+      document.getElementById('modalPrice').innerHTML = p.price ? p.price + ' <small>· precio final</small>' : 'Consultar precio';
+      document.getElementById('modalRef').textContent = p.ref ? 'Referencia: ' + p.ref : '';
+      document.getElementById('modalDesc').textContent = p.desc || 'Consultanos por WhatsApp para más detalles y fotos reales de este reloj.';
+      // Foto en el modal (si existe)
+      const pw = document.getElementById('modalPhotoWrap');
+      const mp = document.getElementById('modalPhoto');
+      pw.classList.remove('show'); mp.removeAttribute('src');
+      mp.alt = p.name;
+      loadPhoto(mp, p.ref, () => pw.classList.remove('show'));
+      mp.addEventListener('load', () => pw.classList.add('show'), { once: true });
+      const msg = encodeURIComponent('Hola! Me interesa este reloj:\n\n' + p.name + (p.ref ? '\nRef: ' + p.ref : '') + (p.price ? '\nPrecio: ' + p.price : '') + '\n\n¿Está disponible?');
+      document.getElementById('modalWa').href = 'https://wa.me/' + WA_NUMBER + '?text=' + msg;
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+    function closeModal() { modal.classList.remove('open'); document.body.style.overflow = ''; }
+    document.getElementById('modalClose').addEventListener('click', closeModal);
+    modal.addEventListener('click', e => { if (e.target === modal) closeModal(); });
+    document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+    // 1) Mostramos el respaldo al instante (catálogo nunca vacío)
+    useFallback();
+    // 2) Intentamos actualizar en vivo desde la planilla en segundo plano
+    loadCatalog();
+
+    // Toast
+    function showToast(msg, duration = 3000) {
+      const t = document.getElementById('toast');
+      t.textContent = msg;
+      t.classList.add('show');
+      setTimeout(() => t.classList.remove('show'), duration);
+    }
+
+    // Contact form
+    document.getElementById('contactForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const name = this.name.value.trim();
+      const email = this.email.value.trim();
+      const message = this.message.value.trim();
+      if (!name || !email || !message) {
+        showToast('Por favor completá los campos requeridos.');
+        return;
+      }
+      const phone = this.phone.value.trim();
+      const brand = this.brand.value;
+      const text = encodeURIComponent(
+        `Hola! Me comunico desde la web de HUNNIDS.\n\nNombre: ${name}\nEmail: ${email}${phone ? '\nTeléfono: ' + phone : ''}${brand ? '\nMarca de interés: ' + brand : ''}\n\nMensaje: ${message}`
+      );
+      window.open(`https://wa.me/5492235368360?text=${text}`, '_blank');
+      this.reset();
+      showToast('¡Gracias! Redirigiendo a WhatsApp...');
+    });
+
+    // Smooth anchor
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+      a.addEventListener('click', e => {
+        const target = document.querySelector(a.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -5,9 +5,9 @@ import Container from "@/components/ui/Container";
 import { SITE } from "@/lib/constants";
 
 export const metadata: Metadata = {
-  title: "TÃ©rminos y Condiciones",
+  title: "Términos y Condiciones",
   description:
-    "TÃ©rminos y condiciones de uso, compra, envÃ­os, garantÃ­a, cambios y protecciÃ³n de datos de HUNNIDS.",
+    "Términos y condiciones de uso, compra, envíos, garantía, cambios y protección de datos de HUNNIDS.",
   robots: { index: true, follow: true },
 };
 
@@ -50,10 +50,10 @@ export default function TerminosPage() {
           Legal
         </span>
         <h1 className="mt-4 font-serif text-4xl font-light leading-tight text-off-white sm:text-5xl">
-          TÃ©rminos y Condiciones
+          Términos y Condiciones
         </h1>
         <p className="mt-5 text-sm font-light leading-relaxed text-gray">
-          Ãšltima actualizaciÃ³n: {LAST_UPDATED}
+          Última actualización: {LAST_UPDATED}
         </p>
 
         <div className="mt-14 space-y-12">
@@ -65,7 +65,7 @@ export default function TerminosPage() {
               forma exclusivamente online.
             </p>
             <p>
-              PodÃ©s contactarnos por WhatsApp al{" "}
+              Podés contactarnos por WhatsApp al{" "}
               <a
                 href={whatsappUrl}
                 target="_blank"
@@ -87,12 +87,12 @@ export default function TerminosPage() {
             </p>
           </Section>
 
-          <Section title="2. AceptaciÃ³n de los tÃ©rminos">
+          <Section title="2. Aceptación de los términos">
             <p>
-              El uso de este sitio y la realizaciÃ³n de cualquier compra implican la aceptaciÃ³n plena
-              de estos TÃ©rminos y Condiciones. Si no estÃ¡s de acuerdo con ellos, te pedimos que no
-              utilices el sitio ni realices operaciones. {SITE.name} podrÃ¡ modificar estos tÃ©rminos en
-              cualquier momento; la versiÃ³n vigente serÃ¡ siempre la publicada en esta pÃ¡gina.
+              El uso de este sitio y la realización de cualquier compra implican la aceptación plena
+              de estos Términos y Condiciones. Si no estás de acuerdo con ellos, te pedimos que no
+              utilices el sitio ni realices operaciones. {SITE.name} podrá modificar estos términos en
+              cualquier momento; la versión vigente será siempre la publicada en esta página.
             </p>
           </Section>
 
@@ -100,12 +100,12 @@ export default function TerminosPage() {
             <p>
               {SITE.name} comercializa relojes <strong className="font-medium text-off-white">100% originales</strong>,
               tanto nuevos como usados o refurbished/importados, de marcas reconocidas. Todos los
-              productos son autÃ©nticos; no vendemos rÃ©plicas ni imitaciones.
+              productos son auténticos; no vendemos réplicas ni imitaciones.
             </p>
             <p>
-              Las fotografÃ­as y descripciones son ilustrativas y buscan reflejar el producto con la
+              Las fotografías y descripciones son ilustrativas y buscan reflejar el producto con la
               mayor fidelidad posible. En el caso de relojes usados, cualquier marca de uso relevante
-              se informa antes de la compra. La disponibilidad estÃ¡ sujeta a stock; algunos modelos se
+              se informa antes de la compra. La disponibilidad está sujeta a stock; algunos modelos se
               ofrecen bajo la modalidad &ldquo;por encargo&rdquo;.
             </p>
           </Section>
@@ -113,110 +113,110 @@ export default function TerminosPage() {
           <Section title="4. Precios">
             <p>
               Los precios se expresan en pesos argentinos (ARS), salvo que se indique lo contrario, y
-              pueden modificarse sin previo aviso. El precio vÃ¡lido para cada operaciÃ³n es el
-              confirmado al momento de coordinar la compra. En caso de un error tipogrÃ¡fico o de
-              carga evidente en un precio, {SITE.name} se reserva el derecho de cancelar la operaciÃ³n y
+              pueden modificarse sin previo aviso. El precio válido para cada operación es el
+              confirmado al momento de coordinar la compra. En caso de un error tipográfico o de
+              carga evidente en un precio, {SITE.name} se reserva el derecho de cancelar la operación y
               reintegrar cualquier importe abonado.
             </p>
           </Section>
 
           <Section title="5. Proceso de compra">
             <p>
-              Las compras se coordinan y confirman a travÃ©s de nuestros canales de atenciÃ³n (WhatsApp
+              Las compras se coordinan y confirman a través de nuestros canales de atención (WhatsApp
               e Instagram). En esa instancia se acuerdan el modelo, el precio final, el medio de pago y
-              los datos de envÃ­o. La operaciÃ³n se considera perfeccionada una vez confirmado el pedido
+              los datos de envío. La operación se considera perfeccionada una vez confirmado el pedido
               y recibido el pago correspondiente.
             </p>
           </Section>
 
           <Section title="6. Medios de pago">
             <p>
-              Aceptamos mÃºltiples medios de pago. Las opciones disponibles y sus condiciones (por
+              Aceptamos múltiples medios de pago. Las opciones disponibles y sus condiciones (por
               ejemplo, transferencia bancaria u otras alternativas) se informan al coordinar cada
               compra. Los pagos se procesan de forma segura y {SITE.name} no almacena datos sensibles de
               tarjetas ni cuentas.
             </p>
           </Section>
 
-          <Section title="7. EnvÃ­os">
+          <Section title="7. Envíos">
             <p>
-              Realizamos <strong className="font-medium text-off-white">envÃ­o gratuito a todo el paÃ­s</strong>. Los
+              Realizamos <strong className="font-medium text-off-white">envío gratuito a todo el país</strong>. Los
               plazos de entrega son estimados y dependen del destino y del correo o transporte
               utilizado. Una vez despachado el pedido, {SITE.name} no es responsable por demoras
               atribuibles al servicio de correo, aunque colaboramos en el seguimiento hasta la entrega.
             </p>
           </Section>
 
-          <Section title="8. GarantÃ­a">
+          <Section title="8. Garantía">
             <p>
               Todos nuestros relojes cuentan con una{" "}
-              <strong className="font-medium text-off-white">garantÃ­a propia de 3 meses</strong> que cubre defectos de
-              funcionamiento del movimiento. Algunos productos incluyen ademÃ¡s garantÃ­a internacional o
+              <strong className="font-medium text-off-white">garantía propia de 3 meses</strong> que cubre defectos de
+              funcionamiento del movimiento. Algunos productos incluyen además garantía internacional o
               extendida del fabricante, lo cual se informa en cada caso.
             </p>
             <p>
-              La garantÃ­a no cubre: daÃ±os por mal uso, golpes, contacto con agua fuera de la resistencia
-              especificada del modelo, manipulaciÃ³n o apertura por parte de terceros no autorizados,
+              La garantía no cubre: daños por mal uso, golpes, contacto con agua fuera de la resistencia
+              especificada del modelo, manipulación o apertura por parte de terceros no autorizados,
               desgaste normal de uso, ni elementos consumibles como pila o malla. Para gestionar la
-              garantÃ­a, escribinos por WhatsApp y te indicamos los pasos a seguir.
+              garantía, escribinos por WhatsApp y te indicamos los pasos a seguir.
             </p>
           </Section>
 
           <Section title="9. Cambios, devoluciones y derecho de arrepentimiento">
             <p>
               De acuerdo con la Ley 24.240 de Defensa del Consumidor, en las compras a distancia el
-              comprador tiene derecho a revocar la aceptaciÃ³n dentro de los{" "}
-              <strong className="font-medium text-off-white">10 (diez) dÃ­as corridos</strong> contados a partir de la
-              recepciÃ³n del producto, sin necesidad de expresar motivo y sin penalidad alguna.
+              comprador tiene derecho a revocar la aceptación dentro de los{" "}
+              <strong className="font-medium text-off-white">10 (diez) días corridos</strong> contados a partir de la
+              recepción del producto, sin necesidad de expresar motivo y sin penalidad alguna.
             </p>
             <p>
               Para ejercer este derecho, el producto debe devolverse sin uso, en las mismas condiciones
-              en que fue recibido y con su empaque y accesorios completos. Para iniciar una devoluciÃ³n o
-              cambio, contactanos por WhatsApp dentro del plazo indicado y coordinaremos la logÃ­stica.
+              en que fue recibido y con su empaque y accesorios completos. Para iniciar una devolución o
+              cambio, contactanos por WhatsApp dentro del plazo indicado y coordinaremos la logística.
             </p>
           </Section>
 
           <Section title="10. Encargos y permutas">
             <p>
-              Los pedidos bajo la modalidad &ldquo;por encargo&rdquo; pueden requerir una seÃ±a para su
-              gestiÃ³n, la cual se informa previamente. Las permutas de relojes estÃ¡n sujetas a la
-              evaluaciÃ³n previa del reloj ofrecido por el cliente y a la aceptaciÃ³n por parte de {SITE.name}.
+              Los pedidos bajo la modalidad &ldquo;por encargo&rdquo; pueden requerir una seña para su
+              gestión, la cual se informa previamente. Las permutas de relojes están sujetas a la
+              evaluación previa del reloj ofrecido por el cliente y a la aceptación por parte de {SITE.name}.
             </p>
           </Section>
 
           <Section title="11. Propiedad intelectual">
             <p>
-              La marca {SITE.name}, el logo, los textos, las fotografÃ­as y demÃ¡s contenidos de este sitio
-              son propiedad de {SITE.name} y estÃ¡n protegidos por la legislaciÃ³n vigente. Queda prohibida
-              su reproducciÃ³n o uso sin autorizaciÃ³n previa. Las marcas de los fabricantes de relojes
+              La marca {SITE.name}, el logo, los textos, las fotografías y demás contenidos de este sitio
+              son propiedad de {SITE.name} y están protegidos por la legislación vigente. Queda prohibida
+              su reproducción o uso sin autorización previa. Las marcas de los fabricantes de relojes
               mencionadas pertenecen a sus respectivos titulares.
             </p>
           </Section>
 
-          <Section title="12. ProtecciÃ³n de datos personales">
+          <Section title="12. Protección de datos personales">
             <p>
-              Los datos personales que nos brindÃ¡s (como nombre, contacto y domicilio de envÃ­o) se
-              utilizan Ãºnicamente para gestionar tu compra, coordinar el envÃ­o y mantener la
-              comunicaciÃ³n. No comercializamos ni cedemos tus datos a terceros, salvo lo estrictamente
+              Los datos personales que nos brindás (como nombre, contacto y domicilio de envío) se
+              utilizan únicamente para gestionar tu compra, coordinar el envío y mantener la
+              comunicación. No comercializamos ni cedemos tus datos a terceros, salvo lo estrictamente
               necesario para concretar el pago o la entrega. El tratamiento de datos se realiza conforme
-              a la Ley 25.326 de ProtecciÃ³n de Datos Personales. PodÃ©s solicitar el acceso, la
-              rectificaciÃ³n o la supresiÃ³n de tus datos escribiÃ©ndonos por nuestros canales de contacto.
+              a la Ley 25.326 de Protección de Datos Personales. Podés solicitar el acceso, la
+              rectificación o la supresión de tus datos escribiéndonos por nuestros canales de contacto.
             </p>
           </Section>
 
-          <Section title="13. Ley aplicable y jurisdicciÃ³n">
+          <Section title="13. Ley aplicable y jurisdicción">
             <p>
-              Estos TÃ©rminos y Condiciones se rigen por las leyes de la RepÃºblica Argentina. Ante
-              cualquier conflicto, serÃ¡n competentes los tribunales que correspondan segÃºn la normativa
-              de defensa del consumidor. El consumidor puede ademÃ¡s presentar reclamos ante la autoridad
-              de aplicaciÃ³n de Defensa del Consumidor a travÃ©s de la Ventanilla Ãšnica Federal
+              Estos Términos y Condiciones se rigen por las leyes de la República Argentina. Ante
+              cualquier conflicto, serán competentes los tribunales que correspondan según la normativa
+              de defensa del consumidor. El consumidor puede además presentar reclamos ante la autoridad
+              de aplicación de Defensa del Consumidor a través de la Ventanilla Única Federal
               (consumidor.gob.ar).
             </p>
           </Section>
 
           <Section title="14. Contacto">
             <p>
-              Ante cualquier duda sobre estos TÃ©rminos y Condiciones o sobre una compra, podÃ©s
+              Ante cualquier duda sobre estos Términos y Condiciones o sobre una compra, podés
               escribirnos por{" "}
               <a
                 href={whatsappUrl}

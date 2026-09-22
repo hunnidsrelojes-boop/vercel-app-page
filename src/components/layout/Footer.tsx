@@ -42,7 +42,7 @@ export default function Footer() {
 
           <div>
             <p className="text-[11px] font-medium uppercase tracking-[0.2em] text-silver">
-              NavegaciÃ³n
+              Navegación
             </p>
             <ul className="mt-5 space-y-3">
               {NAV_LINKS.map((link) => (
@@ -73,21 +73,21 @@ export default function Footer() {
                   WhatsApp
                 </a>
               </li>
-              <li>Mar del Plata â€” envÃ­os a todo el paÃ­s</li>
+              <li>Mar del Plata — envíos a todo el país</li>
             </ul>
           </div>
         </div>
 
         <div className="mt-14 flex flex-col gap-4 border-t border-line pt-8 text-xs font-light text-gray sm:flex-row sm:items-center sm:justify-between">
           <p>
-            Â© {year} {SITE.name}. Todos los derechos reservados.
+            © {year} {SITE.name}. Todos los derechos reservados.
           </p>
           <nav className="flex flex-wrap items-center gap-x-6 gap-y-2">
             <Link href="/terminos" className="transition-colors hover:text-off-white">
-              TÃ©rminos y Condiciones
+              Términos y Condiciones
             </Link>
             <Link href="/privacidad" className="transition-colors hover:text-off-white">
-              PolÃ­tica de Privacidad
+              Política de Privacidad
             </Link>
           </nav>
         </div>
